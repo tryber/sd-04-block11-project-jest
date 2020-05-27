@@ -10,12 +10,6 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-// Iniciando o projeto
-/*
-1. Jest Assíncrono
-Complete os testes do arquivo test/asyncJest.spec.js
-para que funcionem com código assíncrono.
-*/
 describe("o retorno do telefonema", () => {
   test("atende", async () => {
     // assert.fail();
