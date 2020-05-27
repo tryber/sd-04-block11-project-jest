@@ -20,21 +20,23 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  const mockGuerreiros = jest.spyOn(adventure, 'randomAttack');
+  beforeEach(() => mockGuerreiros());
 
-  test('depois da primeira aventura', () => {
-    expect(adventure.specialists.length).toBe(5);
+  it('depois da primeira aventura', () => {
+    expect(adventure.specialists).toHaveLength(5);
   });
-  test('depois da segunda aventura', () => {
-    expect(adventure.specialists.length).toBe(4);
+  it('depois da segunda aventura', () => {
+    expect(adventure.specialists).toHaveLength(4);
   });
-  test('depois da terceira aventura', () => {
-    expect(adventure.specialists.length).toBe(3);
+  it('depois da terceira aventura', () => {
+    expect(adventure.specialists).toHaveLength(3);
   });
-  test('depois da quarta aventura', () => {
-    expect(adventure.specialists.length).toBe(2);
+  it('depois da quarta aventura', () => {
+    expect(adventure.specialists).toHaveLength(2);
   });
-  test('depois da quinta aventura', () => {
-    expect(adventure.specialists.length).toBe(1);
+  it('depois da quinta aventura', () => {
+    expect(adventure.specialists).toHaveLength(1);
+    console.log(`Congrats ${adventure.specialists[0].nome}! You've survived!`);
   });
 });
