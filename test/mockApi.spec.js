@@ -31,7 +31,7 @@ describe('verifica o usuário', () => {
     email: 'tunico@bol.com.br',
     login: { username: 'tunicao123', password: '1234567890' },
   };
-  tunico = jest;
+  api.fetchURL = jest.fn().mockResolvedValue(tunico);
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
