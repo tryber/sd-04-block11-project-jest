@@ -2,7 +2,7 @@ const adventure = require('../src/setupTeardown');
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
-devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
+   o grupo não chegará inteiro ao fim.
 Após cada aventura um de nossos aventureiros cairá.
 Cada um dos testes abaixo verifica a quantidade de aventureiros após cada iteração.
 Sua missão aqui é:
@@ -23,18 +23,23 @@ describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
 
   test('depois da primeira aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(1);
   });
 });
