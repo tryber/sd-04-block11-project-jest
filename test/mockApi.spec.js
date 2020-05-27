@@ -8,8 +8,6 @@ const TUNICO = {
   login: { username: 'tunicao123', password: '1234567890' },
 };
 
-// Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
-
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
   api.fetchURL = jest.fn().mockResolvedValue(TUNICO);
