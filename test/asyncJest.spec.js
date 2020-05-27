@@ -12,13 +12,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", async () => {
-    // assert.fail();
-    const getAnswer = await answerPhone('Hello');
+    const getAnswer = await answerPhone('Hello'); //Await to work in asynchrone
     expect(getAnswer).toEqual('Oi!');
     });
   test("ocupado", async () => {
-    // assert.fail();
-    try{
+    try{  //try and catch to get the error form the promise 
       await answerPhone();
     } catch (error) {
       expect(error).toEqual('Infelizmente não podemos atender...');
