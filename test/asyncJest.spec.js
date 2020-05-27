@@ -12,11 +12,18 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", () => {
-    
+    return expect(answerPhone(true)).resolves.toBe('Oi!')
+    // return answerPhone().then(data => {
+    //   expect(data).toBe('Oi!')
+    // })
+    // const atende = jest.spyOn(answerPhone)
+    // answerPhone.mockResolvedValue(true);
     
   });
   test("ocupado", () => {
-    
-    
+   return answerPhone().catch(data => {
+     expect(data).toBe('Infelizmente não podemos atender...')
+   }) 
+    // mockRejectedValue(value)
   });
 });
