@@ -20,7 +20,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  //  Adicione seu código aqui
+  //  Use a função randomAttack do objeto adventure
+  //  que remove um dos aventureiros toda vez que é chamada,
+  //  ela deve funcionar entre cada teste.
+  beforeEach(() => adventure.randomAttack());
+  //  imprima na tela após cada teste o grupo de aventureiros restante.
+  afterEach(() => console.log('Boa sorte', adventure.specialists));
+  //  No fim dos testes, imprima uma mensagem com o nome do aventureiro que sobreviveu.
+  afterAll(() => console.log(`${adventure.specialists[0].nome} sobreviveu!!`))
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
