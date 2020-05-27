@@ -20,8 +20,8 @@ describe("o retorno do telefonema", () => {
   });
   test("ocupado", () => {
     // assert.fail();
-    answerPhone().then((data) => {
-      expect(data).not.toBe('Oi!');
+    answerPhone().catch((data) => {
+      expect(data).toBe('Infelizmente não podemos atender...');
     })
   });
 });
