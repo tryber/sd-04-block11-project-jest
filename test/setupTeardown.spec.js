@@ -25,21 +25,27 @@ describe('quem sobreviveu?', () => {
   test('depois da primeira aventura', () => {
     adventure.randomAttack();
     expect(adventure.specialists.length).toBe(5);
+    console.log('adventurer left', adventure.specialists)
   });
   test('depois da segunda aventura', () => {
     adventure.randomAttack();
     expect(adventure.specialists.length).toBe(4);
+    console.log('adventurer left', adventure.specialists)
   });
   test('depois da terceira aventura', () => {
     adventure.randomAttack();
     expect(adventure.specialists.length).toBe(3);
+    console.log('adventurer left', adventure.specialists)
   });
   test('depois da quarta aventura', () => {
     adventure.randomAttack();
     expect(adventure.specialists.length).toBe(2);
+    console.log('adventurer left', adventure.specialists)
   });
   test('depois da quinta aventura', () => {
     adventure.randomAttack();
     expect(adventure.specialists.length).toBe(1);
+    console.log('adventurer left', adventure.specialists)
+    console.log(`And the last adventure is ${adventure.specialists[0].nome}`)
   });
 });
