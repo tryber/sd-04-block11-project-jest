@@ -6,11 +6,11 @@ No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a
 
 Faça um mock da função fetchURL() de forma que,
 independa de chamadas de API e retorne as seguintes informações do Tunico:
-- Gênero: Masculino
+- Gênero: Masculino~
 - Primeiro nome: Antônio
 - Último nome: Britto
 - País: Brasil
-- Email: tunico@bol.com.br (Sim, é um email do bol mesmo...)
+- Email: tunico@bol.com.br ''(Sim, é um email do bol mesmo...)
 - Nome de usuário: tunicao123
 - Senha: 1234567890 (Usem senhas fortes, crianças!)
 
@@ -23,8 +23,16 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  // Crie sua mock da funçã''o fetchURL() aqui
+  const tunico = {
+    gender: 'male',
+    name: { first: 'Antônio', last: 'Britto' },
+    location: { country: 'Brazil' },
+    email: 'tunico@bol.com.br',
+    login: { username: 'tunicao123', password: '1234567890' },
+  };
 
+  api.fetchURL = jest.fn().mockResolvedValue(tunico);
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
