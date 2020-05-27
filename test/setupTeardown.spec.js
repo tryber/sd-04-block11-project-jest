@@ -12,15 +12,19 @@ describe('quem sobreviveu?', () => {
     console.log(
       `afterEach executed
       grupo dos aventureiros remanescentes:`,
-      adventure.specialists.map(warrior => warrior.nome).join(', '),
+      adventure.specialists
+        .map(aventureiro => {
+          return `${aventureiro.classe} ${aventureiro.nome}`;
+        })
+        .join(', '),
     );
   });
 
   afterAll(() => {
     console.log(
       `afterAll executed 
-    :) Aventureito sobrevivente é ... `,
-      adventure.specialists[0].nome,
+    :) Aventureito sobrevivente é ... 
+      ${adventure.specialists[0].classe} ${adventure.specialists[0].nome}`,
     );
   });
 
