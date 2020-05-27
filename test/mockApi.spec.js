@@ -25,8 +25,30 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
 
+  const tunicoBol = {
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  };
+
   test('verifica se o usuário é o tunico', async () => {
-    return api.fetchURL().then((user) => {
+
+    const spyFetch = jest.spyOn(api, 'fetchURL').mockResolvedValue(tunicoBol);
+
+    //  api.fetchURL = jest.fn().mockResolvedValue(tunicoBol);
+    //  console.log(spyFetch());
+    
+    return spyFetch().then(user => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
