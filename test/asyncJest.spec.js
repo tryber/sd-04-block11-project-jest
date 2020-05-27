@@ -13,16 +13,24 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // Iniciando o projeto
 /*
 1. Jest Assíncrono
-Complete os testes do arquivo test/asyncJest.spec.js 
+Complete os testes do arquivo test/asyncJest.spec.js
 para que funcionem com código assíncrono.
 */
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
-    assert.fail();
+  test("atende", async () => {
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    const call = await answerPhone(true);
+    expect.assertions(1);
+    expect(call).toBe('Oi!');
   });
-  test("ocupado", () => {
-    assert.fail();
+  test("ocupado", async () => {
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    try {
+      await answerPhone(false);
+    } catch (error) {
+      expect(error).toBe('Infelizmente não podemos atender...');
+    }
   });
 });
