@@ -24,6 +24,7 @@ describe('quem sobreviveu?', () => {
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
+    console.log(adventure.specialists);
   });
   test('depois da segunda aventura', () => {
     expect(adventure.specialists.length).toBe(4);
