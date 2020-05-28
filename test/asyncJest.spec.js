@@ -15,12 +15,13 @@ describe("o retorno do telefonema", () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     const call = await answerPhone(true);
-    expect.assertions(1);
+
     expect(call).toBe('Oi!');
   });
   test("ocupado", async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
+    expect.assertions(1);
     try {
       await answerPhone(false);
     } catch (error) {
