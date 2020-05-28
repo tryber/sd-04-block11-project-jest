@@ -23,6 +23,7 @@ describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
 
   beforeEach(adventure.randomAttack);
+  afterAll(() => {console.log(`${adventure.specialists[0].nome} sobreviveu!`)});
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
