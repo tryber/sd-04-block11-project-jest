@@ -15,7 +15,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  
   mockFunctions.add.mockImplementation((a, b) => a + b);
   mockFunctions.subtract.mockImplementation((a, b) => a - b);
   mockFunctions.multiply.mockImplementation((a, b) => a * b);
@@ -24,7 +24,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.factorial.mockImplementation((a) => {
     let fact = 1;
     for (let i = 1; i <= a; i += 1) {
-      fact *= i; // 1, 2, 6
+      fact *= i;
     }
     return fact;
   });
