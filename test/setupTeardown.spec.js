@@ -1,4 +1,5 @@
 const adventure = require('../src/setupTeardown');
+jest.mock('../src/mockFunctions');
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
@@ -21,6 +22,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial.mockImplementation((a) => {
+    let fact = 1;
+    for (let i = 1; i <= a; i += 1) {
+      fact *= i; // 1, 2, 6
+    }
+    return fact;
+  });
+
   beforeEach(() => adventure.randomAttack());
   afterEach(() => console.log(adventure.specialists));
   test('depois da primeira aventura', () => {
