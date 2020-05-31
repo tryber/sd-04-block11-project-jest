@@ -67,13 +67,12 @@ describe('verifica o usuário', () => {
     let fet = api.fetchURL;
     fet = jest.fn().mockReturnValue(user);
     expect.assertions(7);
-      expect(fet().gender).toEqual('male');
-      expect(fet().name.first).toEqual('Antônio');
-      expect(fet().name.last).toEqual('Britto');
-      expect(fet().location.country).toEqual('Brazil');
-      expect(fet().email).toEqual('tunico@bol.com.br');
-      expect(fet().login.username).toEqual('tunicao123');
-      expect(fet().login.password).toEqual('1234567890');
+    expect(fet().gender).toEqual('male');
+    expect(fet().name.first).toEqual('Antônio');
+    expect(fet().name.last).toEqual('Britto');
+    expect(fet().location.country).toEqual('Brazil');
+    expect(fet().email).toEqual('tunico@bol.com.br');
+    expect(fet().login.username).toEqual('tunicao123');
+    expect(fet().login.password).toEqual('1234567890');
   });
 });
-
