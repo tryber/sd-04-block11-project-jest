@@ -20,7 +20,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach (() => {
+    adventure.randomAttack();
+    if(adventure.specialists.length > 1) return console.log(adventure.specialists);
+  });
+
+  afterAll(() => {
+    console.log(`My dear ${Object.values(adventure.specialists[0])[0]} has no princess to rescue here...`);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
