@@ -22,8 +22,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
   afterEach(() => adventure.randomAttack());
- 
-  //const lista = adventure.specialists.map((elemento) => elemento.nome)
+  // após cada execução, o código continuará com o valor do resultado da execução anterior
 
   afterEach(() => console.log(adventure.specialists[0].nome))
 
