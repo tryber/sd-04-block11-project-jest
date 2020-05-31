@@ -21,10 +21,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-  afterEach(() => adventure.randomAttack());
+  beforeEach(() => adventure.randomAttack());
   // após cada execução, o código continuará com o valor do resultado da execução anterior
-
-  afterEach(() => console.log(adventure.specialists[0].nome))
+  afterEach(() => console.log(adventure.specialists[0].nome));
 
 
   test('depois da primeira aventura', () => {
