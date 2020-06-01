@@ -1,4 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
+jest.mock('../src/mockFunctions')
 
 /*
 Criamos uma série de funções com eficiência duvidosa.
@@ -9,13 +10,25 @@ A idéia é que os novos testes sobrescrevam os testes
 importados apenas na suite de testes abaixo.
 
 Importante! A correção de código via mock functions não é uma aplicação usual.
-O foco aqui é a utilização de mock functions.
+O foco aqui é 1 utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((x, y) => x + y);
+  mockFunctions.subtract.mockImplementation((x, y) => x - y);
+  mockFunctions.multiply.mockImplementation((x, y) => x * y);
+  mockFunctions.divide.mockImplementation((x, y) => x / y);
+  mockFunctions.power.mockImplementation((x, y) => Math.pow(x, y));
+  mockFunctions.factorial.mockImplementation(n => {
+      let test = n;
+      for (let i = 1; i < n; i++) {
+          test *= i;
+      }
+      return test;
+    });
   
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
