@@ -20,21 +20,26 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  const spec = adventure.specialists;
+
+  beforeEach(() => adventure.randomAttack());
+  afterEach(() => console.log(
+    spec.map(({ nome, classe }) => `${nome}, o ${classe}`)
+  ));
 
   test('depois da primeira aventura', () => {
-    expect(adventure.specialists.length).toBe(5);
+    expect(spec.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
-    expect(adventure.specialists.length).toBe(4);
+    expect(spec.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
-    expect(adventure.specialists.length).toBe(3);
+    expect(spec.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
-    expect(adventure.specialists.length).toBe(2);
+    expect(spec.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
-    expect(adventure.specialists.length).toBe(1);
+    expect(spec.length).toBe(1);
   });
 });
